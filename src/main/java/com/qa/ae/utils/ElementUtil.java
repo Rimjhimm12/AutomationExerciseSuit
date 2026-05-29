@@ -105,7 +105,7 @@ public class ElementUtil {
             System.out.println("single element is displayed: " + locator);
             return true;
         } else {
-            System.out.println("multiple or zero elements are displayed: " + locator);
+            //System.out.println("multiple or zero elements are displayed: " + locator);
             return false;
         }
     }
@@ -257,6 +257,28 @@ public class ElementUtil {
     public void doActionsClick(By locator) {
         Actions act = new Actions(driver);
         act.click(getElement(locator)).perform();
+    }
+
+    public void closeAdIfPresent(By iframeLocator, By closeButtonLocator) {
+        try {
+            List<WebElement> frames = driver.findElements(iframeLocator);
+            for (WebElement frame : frames) {
+                try {
+                    driver.switchTo().frame(frame);
+                    List<WebElement> closeButtons = driver.findElements(closeButtonLocator);
+                    if (!closeButtons.isEmpty()) {
+                        closeButtons.get(0).click();
+                        break;
+                    }
+                } catch (Exception ignored) {
+                    // ignore this frame and try the next one
+                } finally {
+                    driver.switchTo().defaultContent();
+                }
+            }
+        } catch (Exception e) {
+            driver.switchTo().defaultContent();
+        }
     }
 
     /**
@@ -572,7 +594,6 @@ public class ElementUtil {
 
 
 }
-
 
 
 

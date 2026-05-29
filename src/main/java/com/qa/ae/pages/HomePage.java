@@ -20,27 +20,29 @@ public class HomePage {
     private final By DELETE_ACCOUNT = By.linkText("Delete Account");
 
 
-
+    /**
+     * Get home page title
+     * @return home page title
+     */
     public String getHomePageTitle(){
         String homePageTitle = elementUtil.waitForTitleContains(AppConstants.HOME_PAGE_TITLE,10);
         System.out.println("Home page title is: " + homePageTitle);
         return homePageTitle;
     }
 
+    /**
+     * Click on Signup/Login button
+     * @return drive into Login page
+     */
+
     public LoginPage doClickSignupButton(){
         elementUtil.doClick(SIGNUP_BUTTON, 10);
         return new LoginPage(driver);
     }
 
-    public String isUserLoggedIn(){
-        String text = elementUtil.waitForElementVisible(SIGNED_USER, 10).getText();
-        System.out.println("Logged in user is: " + text);
-        return text;
-    }
-
      /**
-      * Get logged in username
-      * Returns text like "Logged in as kiki"
+      * Get logged-in username
+      * Returns text like "Logged in as Kiki"
       * XPath explanation: //a[contains(., 'Logged in as')]
       *   - Finds <a> element containing "Logged in as" text
       *   - The dot (.) includes all text nodes and descendant text
@@ -52,8 +54,13 @@ public class HomePage {
         return text;
     }
 
+    /**
+     *
+     * @return transfers to Account page after clicking Delete Account button
+     */
+
     public AccountPage doClickDeleteAccountButton(){
-        elementUtil.doClick(DELETE_ACCOUNT, 10);
+        elementUtil.doActionsClick(DELETE_ACCOUNT);
         return new AccountPage(driver);
     }
 

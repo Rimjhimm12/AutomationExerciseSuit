@@ -24,13 +24,13 @@ public class RegisterUserTest extends BaseTest {
                                      String countryName, String state, String city, String zipcode,
                                      String mobileNumber) {
 
-        Assert.assertTrue(homePage.getHomePageTitle().contains("Automation"), AppErrors.TITLE_NOT_FOUND);
+        Assert.assertTrue(homePage.getHomePageTitle().contains(AppConstants.HOME_PAGE_TITLE), AppErrors.TITLE_NOT_FOUND);
 
         loginPage = homePage.doClickSignupButton();
         Assert.assertEquals(loginPage.getSignupPageHeader(), AppConstants.SIGNUP_PAGE_HEADER,
                 AppErrors.HEADER_NOT_MATCH);
 
-        signUpPage = loginPage.clickSignupButton(username, RandomStringUtil.getRandomEmail());
+        signUpPage = loginPage.doUserSignUp(username, RandomStringUtil.getRandomEmail());
         Assert.assertTrue(signUpPage.getInformationHeader(), AppErrors.DETAILS_PAGE_NOT_DISPLAYED);
 
         accountPage = signUpPage.registerNewUsers(RandomStringUtil.getRandomText(), days, months, years,
@@ -38,7 +38,7 @@ public class RegisterUserTest extends BaseTest {
         Assert.assertTrue(accountPage.isAccountCreated(), AppErrors.ACCOUNT_CREATION_FAILED);
 
         homePage = accountPage.doContinue();
-        Assert.assertEquals(homePage.getLoggedInUser(), "Logged in as " + username, AppErrors.HEADER_NOT_MATCH);
+        Assert.assertEquals(homePage.getLoggedInUser(), "Logged in as " + username, AppErrors.INCORRECT_LOGGED_IN_USER_NAME);
 
         accountPage = homePage.doClickDeleteAccountButton();
         Assert.assertTrue(accountPage.isAccountDeleted(), AppErrors.ACCOUNT_DELETION_FAILED);

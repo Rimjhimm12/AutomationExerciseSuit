@@ -7,11 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
+
 public class DriverFactory {
 
     WebDriver driver;
 
-    public WebDriver initDriver(String browser) {
+
+    public WebDriver createDriver(String browser) {
+        if (browser == null || browser.trim().isEmpty()) {
+            throw new BrowserExceptions("Browser value is null or empty.");
+        }
+
         switch(browser.toLowerCase().trim()){
             case "chrome":
                 driver = new ChromeDriver();
@@ -29,9 +36,10 @@ public class DriverFactory {
         }
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.get("https://automationexercise.com/");
         return driver;
     }
+
+
 
 
 
