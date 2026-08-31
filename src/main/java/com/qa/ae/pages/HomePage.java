@@ -25,9 +25,7 @@ public class HomePage {
      * @return home page title
      */
     public String getHomePageTitle(){
-        String homePageTitle = elementUtil.waitForTitleContains(AppConstants.HOME_PAGE_TITLE,10);
-        System.out.println("Home page title is: " + homePageTitle);
-        return homePageTitle;
+        return elementUtil.waitForTitleContains(AppConstants.HOME_PAGE_TITLE,10);
     }
 
     /**

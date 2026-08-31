@@ -18,6 +18,9 @@ public class RegisterUserTest extends BaseTest {
         };
     }
 
+
+
+
     @Test(dataProvider = "getRegisterUserData")
     public void registerUserFlowTest(String username, String days, String months, String years,
                                      String userLastName, String companyName, String address1, String address2,
