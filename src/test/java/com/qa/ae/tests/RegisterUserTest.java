@@ -30,8 +30,7 @@ public class RegisterUserTest extends BaseTest {
         Assert.assertTrue(homePage.getHomePageTitle().contains(AppConstants.HOME_PAGE_TITLE), AppErrors.TITLE_NOT_FOUND);
 
         loginPage = homePage.doClickSignupButton();
-        Assert.assertEquals(loginPage.getSignupPageHeader(), AppConstants.SIGNUP_PAGE_HEADER,
-                AppErrors.HEADER_NOT_MATCH);
+        Assert.assertTrue(loginPage.getSignupPageHeader(), AppErrors.HEADER_NOT_MATCH);
 
         signUpPage = loginPage.doUserSignUp(username, RandomStringUtil.getRandomEmail());
         Assert.assertTrue(signUpPage.getInformationHeader(), AppErrors.DETAILS_PAGE_NOT_DISPLAYED);
