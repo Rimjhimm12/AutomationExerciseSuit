@@ -16,7 +16,7 @@ public class HomePage {
     }
 
     private final By SIGNUP_BUTTON = By.xpath("//a[text()='"+AppConstants.SIGNUP_LOGIN_BUTTON+"']");
-    private final By SIGNED_USER = By.xpath("//a[i[contains(@class,'fa-user')] and contains(., 'Logged in as')]");
+    private final By SIGNED_USER = By.xpath("//a[text()=' Logged in as ']");
     private final By DELETE_ACCOUNT = By.linkText("Delete Account");
 
 
@@ -48,7 +48,6 @@ public class HomePage {
       */
     public String getLoggedInUser(){
         String text = elementUtil.waitForElementVisible(SIGNED_USER, 10).getText();
-        System.out.println(text);
         return text;
     }
 

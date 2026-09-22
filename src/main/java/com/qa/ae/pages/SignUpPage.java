@@ -54,10 +54,14 @@ public class SignUpPage {
         }
     }
 
-    public AccountPage registerNewUsers(String password, String days, String months, String years,
+    public AccountPage registerNewUsers(String userTitle, String password, String days, String months, String years,
                                   String userLastName, String companyName, String address1, String address2,
                                   String countryName, String state, String city, String zipcode, String mobileNumber) {
-        elementUtil.doClick(USER_Title_MR, 10);
+        if (userTitle.equals("Mr.")) {
+            elementUtil.doClick(USER_Title_MR, 10);
+        } else {
+            elementUtil.doClick(USER_Title_MRS, 10);
+        }
         //elementUtil.doGetAttribute(USER_Title_MR, "value");
         String userName =  elementUtil.doGetAttribute(USER_NAME, "value");
         elementUtil.doSendKeys(USER_PASSWORD, password, 10);

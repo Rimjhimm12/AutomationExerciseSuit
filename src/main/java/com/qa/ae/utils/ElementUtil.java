@@ -78,6 +78,14 @@ public class ElementUtil {
         waitForElementVisible(locator, timeOut).click();
     }
 
+    public void doClick(By locator, By adLocator, int timeOut){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(adLocator));
+        closeButton.click();
+        clickWhenReady(locator, timeOut);
+
+    }
+
     public String doGetText(By locator) {
         return getElement(locator).getText();
     }
@@ -389,6 +397,7 @@ public class ElementUtil {
         return element;
 
     }
+
 
     public WebElement waitForElementVisible(By locator, int timeOut, int intervalTime) {
 
