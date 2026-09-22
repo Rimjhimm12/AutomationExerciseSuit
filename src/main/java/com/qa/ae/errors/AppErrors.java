@@ -9,5 +9,6 @@ public class AppErrors {
     public static final String DETAILS_PAGE_NOT_DISPLAYED = "=========Information header is not displayed on the page===========";
     public static final String ACCOUNT_CREATION_FAILED = "=========Account creation failed, header not displayed.===========";
     public static final String ACCOUNT_DELETION_FAILED = "=========Account deletion failed, header not displayed.===========";
+    public static final String LOGIN_BUTTON_NOT_VISIBLE = "=========Login button is not visible on the page===========";
 
 }

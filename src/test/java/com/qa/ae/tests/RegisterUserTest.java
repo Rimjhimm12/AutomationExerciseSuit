@@ -43,7 +43,7 @@ public class RegisterUserTest extends BaseTest {
         homePage = accountPage.doContinue();
         Assert.assertEquals(homePage.getLoggedInUser(), "Logged in as " + username, AppErrors.INCORRECT_LOGGED_IN_USER_NAME);
 
-        accountPage = homePage.doClickDeleteAccountButton(); 
+        accountPage = homePage.doClickDeleteAccountButton();
         Assert.assertTrue(accountPage.isAccountDeleted(), AppErrors.ACCOUNT_DELETION_FAILED);
 
         homePage = accountPage.doContinue();

@@ -33,9 +33,18 @@ public class LoginPage {
 
     public String getLoginPageHeader(){
         String loginHeader = elementUtil.waitForElementVisible(USER_LOGIN_HEADER, 10).getText();
-        System.out.println("Login page header is: " + loginHeader);
+        //System.out.println("Login page header is: " + loginHeader);
         return loginHeader;
     }
+
+    /**
+     * Login button visibility check
+     */
+    public boolean isLoginButtonVisible() {
+        return elementUtil.waitForElementVisible(LOGIN_BUTTON, 10).isDisplayed();
+    }
+
+
 
     /***
      *
@@ -77,7 +86,7 @@ public class LoginPage {
 
     public String getSignupPageHeader(){
         String signupHeader = elementUtil.waitForElementVisible(NEW_USER_SIGNUP_HEADER, 10).getText();
-        System.out.println("Sign Up page header is: " + signupHeader);
+        //System.out.println("Sign Up page header is: " + signupHeader);
         return signupHeader;
     }
 

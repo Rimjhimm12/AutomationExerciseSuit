@@ -17,7 +17,7 @@ public class NegativeLoginTest extends BaseTest {
         loginPage = homePage.doClickSignupButton();
         Assert.assertEquals(loginPage.getLoginPageHeader(), AppConstants.LOGIN_PAGE_HEADER, AppErrors.HEADER_NOT_MATCH);
 
-        //Login with valid credentials and verifying user is logged in successfully and correct username is displayed.
+        //Login with invalid credentials and verifying user is logged in unsuccessfully.
         loginPage = loginPage.doNegativeLogin(prop.getProperty("username"), prop.getProperty("password"));
         Assert.assertEquals(loginPage.getLoginErrorMessage(),
                 "Your email or password is incorrect!",

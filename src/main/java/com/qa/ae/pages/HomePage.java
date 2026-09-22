@@ -17,6 +17,7 @@ public class HomePage {
 
     private final By SIGNUP_BUTTON = By.xpath("//a[text()='"+AppConstants.SIGNUP_LOGIN_BUTTON+"']");
     private final By SIGNED_USER = By.xpath("//a[text()=' Logged in as ']");
+    private final By LOGOUT_BUTTON = By.xpath("//a[text()=' Logout']");
     private final By DELETE_ACCOUNT = By.linkText("Delete Account");
 
 
@@ -60,6 +61,17 @@ public class HomePage {
         elementUtil.doActionsClick(DELETE_ACCOUNT);
         return new AccountPage(driver);
     }
+
+    /**
+    *
+    * @return transfers to SignUp page after clicking Logout button
+    *
+    */
+    public LoginPage doClickLogOutButton(){
+        elementUtil.doClick(LOGOUT_BUTTON, 10);
+        return new LoginPage(driver);
+    }
+
 
 
 
