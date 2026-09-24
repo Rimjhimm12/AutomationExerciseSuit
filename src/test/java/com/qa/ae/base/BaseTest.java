@@ -2,10 +2,7 @@ package com.qa.ae.base;
 
 import com.qa.ae.factory.ConfigReader;
 import com.qa.ae.factory.DriverFactory;
-import com.qa.ae.pages.AccountPage;
-import com.qa.ae.pages.HomePage;
-import com.qa.ae.pages.LoginPage;
-import com.qa.ae.pages.SignUpPage;
+import com.qa.ae.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -23,6 +20,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected SignUpPage signUpPage;
     protected AccountPage accountPage;
+    protected ContactPage contactPage;
 
 
 

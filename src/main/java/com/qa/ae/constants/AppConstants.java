@@ -12,6 +12,8 @@ public class AppConstants {
     public static final String API_TESTING_BUTTON = " API Testing";
     public static final String VIDEO_TUTORIALS_BUTTON = " Video Tutorials";
     public static final String CONTACT_US_BUTTON = " Contact us";
+    public static final String CONTACT_US_FILE = "/Users/rimjhim/Downloads/selenium_tracker.html";
+    public  static final String CONTACT_US_SUCCESS_MESSAGE = "Success! Your details have been submitted successfully.";
 
 
 }

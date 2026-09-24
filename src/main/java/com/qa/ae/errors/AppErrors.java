@@ -11,5 +11,6 @@ public class AppErrors {
     public static final String ACCOUNT_DELETION_FAILED = "=========Account deletion failed, header not displayed.===========";
     public static final String LOGIN_BUTTON_NOT_VISIBLE = "=========Login button is not visible on the page===========";
     public static final String SIGNUP_ERROR_MESSAGE_NOT_DISPLAYED = "=========Sign Up error message is not displayed on the page===========";
+    public static final String SUCCESS_MESSAGE_NOT_DISPLAYED = "=========Success message is not displaying===========";
 
 }

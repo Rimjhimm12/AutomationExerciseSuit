@@ -19,6 +19,8 @@ public class HomePage {
     private final By SIGNED_USER = By.xpath("//a[text()=' Logged in as ']");
     private final By LOGOUT_BUTTON = By.xpath("//a[text()=' Logout']");
     private final By DELETE_ACCOUNT = By.linkText("Delete Account");
+    private final By CONTACT_US_BUTTON = By.xpath("//a[text()=' Contact us']");
+
 
 
     /**
@@ -70,6 +72,16 @@ public class HomePage {
     public LoginPage doClickLogOutButton(){
         elementUtil.doClick(LOGOUT_BUTTON, 10);
         return new LoginPage(driver);
+    }
+
+    /**
+     *  Click on 'Contact Us' button
+     *  return ContactPage
+     */
+    public ContactPage doClickContactButton(){
+        elementUtil.doClick(CONTACT_US_BUTTON, 10);
+        return new ContactPage(driver);
+
     }
 
 
